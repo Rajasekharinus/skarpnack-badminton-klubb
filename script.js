@@ -135,7 +135,7 @@ window.addEventListener('scroll', () => {
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
-        color: #2c5aa0;
+        color: #2d5016;
     }
     .nav-link.active::after {
         width: 100%;
