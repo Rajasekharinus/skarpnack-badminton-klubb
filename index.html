@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Debug image loading
+        window.addEventListener('load', function() {
+            const img = document.querySelector('.gallery-img');
+            if (img) {
+                console.log('Image src:', img.src);
+                console.log('Image complete:', img.complete);
+                console.log('Image naturalWidth:', img.naturalWidth);
+                console.log('Image naturalHeight:', img.naturalHeight);
+                
+                img.addEventListener('load', function() {
+                    console.log('Image loaded successfully!');
+                });
+                
+                img.addEventListener('error', function() {
+                    console.log('Image failed to load:', img.src);
+                });
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -175,7 +195,11 @@
             <div class="gallery-content">
                 <div class="gallery-item featured">
                     <div class="gallery-image">
-                        <img src="u11-kids-jan-jun.jpg" alt="U11 Kids från Jan-Jun säsongen" class="gallery-img">
+                        <img src="U11_kids_2025_1.jpg" alt="U11 Kids från Jan-Jun säsongen" class="gallery-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-image" style="display: none;">
+                            <i class="fas fa-image"></i>
+                            <p>U11 Kids Photo<br><small>Image not found: U11_kids_2025_1.jpg</small></p>
+                        </div>
                         <div class="gallery-overlay">
                             <div class="gallery-info">
                                 <h3>U11 Kids - Vårsäsong 2024</h3>
@@ -269,7 +293,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Adress</h3>
-                            <p>Skarpnäck Idrottshall<br>Skarpnäck, Stockholm</p>
+                            <p>Skarpnäcks Allé 31<br>128 33 Skarpnäck</p>
                         </div>
                     </div>
                     

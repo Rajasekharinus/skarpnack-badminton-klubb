@@ -197,3 +197,4 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
